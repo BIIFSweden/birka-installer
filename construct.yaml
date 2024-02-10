@@ -1,0 +1,26 @@
+name: birka
+version: 0.1.0
+channels:
+  - https://conda.anaconda.org/conda-forge/
+  - https://repo.anaconda.com/pkgs/main/
+  - https://repo.anaconda.com/pkgs/msys2/  # [win]
+specs:
+  - bioformats_jar
+  - birka==0.1.0
+  - conda  # required for post-install
+  - pip  # required for post-install
+installer_type: sh  # [linux]
+installer_type: exe  # [win]
+installer_type: pkg  # [osx]
+license_file: LICENSE
+write_condarc: true
+post_install: post-install.sh  # [linux]
+post_install: post-install.bat  # [win]
+post_install: post-install.sh  # [osx]
+welcome_image: ""
+header_image: ""
+icon_image: ""
+register_python: false
+welcome_text: ""
+readme_text: ""
+conclusion_text: ""
