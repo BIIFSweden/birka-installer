@@ -1,3 +1,3 @@
-# birka-installer
+# Birka Installer
 
-Installer for [birka](https://github.com/BIIFSweden/birka), the BioImage Archiver
+Installer for [Birka](https://github.com/BIIFSweden/birka), the BioImage Archiver
