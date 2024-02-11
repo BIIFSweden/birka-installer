@@ -9,6 +9,7 @@ specs:
   - birka==0.1.0
   - conda  # required for post-install
   - pip  # required for post-install
+  - pyside6
 installer_type: sh  # [linux]
 installer_type: exe  # [win]
 installer_type: pkg  # [osx]
