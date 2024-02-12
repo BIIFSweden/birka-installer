@@ -1,15 +1,18 @@
 name: birka
-version: 0.1.0
+version: 0.1.2
 channels:
   - https://conda.anaconda.org/conda-forge/
   - https://repo.anaconda.com/pkgs/main/
   - https://repo.anaconda.com/pkgs/msys2/  # [win]
 specs:
   - bioformats_jar
-  - birka==0.1.0
+  - birka==0.1.2
+  - birka-menu==0.1.2
   - conda  # required for post-install
+  - menuinst>=2
   - pip  # required for post-install
   - pyside6
+  - python  # required for post-install
 installer_type: sh  # [linux]
 installer_type: exe  # [win]
 installer_type: pkg  # [osx]
