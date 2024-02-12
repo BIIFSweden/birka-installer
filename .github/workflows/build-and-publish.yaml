@@ -11,15 +11,18 @@ jobs:
       matrix:
         include:
           - os: ubuntu-latest
-            artifact: birka-VERSION-Linux-x86_64.sh
+            suffix: Linux-x86_64.sh
           - os: macos-latest
-            artifact: birka-VERSION-MacOSX-x86_64.pkg
+            suffix: MacOSX-x86_64.pkg
           - os: windows-latest
-            artifact: birka-VERSION-Windows-x86_64.exe
+            suffix: Windows-x86_64.exe
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Extract version
+        id: meta
+        run: echo "::set-output name=version::${GITHUB_REF#refs/tags/v}"
       - name: Setup Miniconda
         uses: conda-incubator/setup-miniconda@v3
       - name: Install constructor
@@ -29,5 +32,5 @@ jobs:
       - name: Publish installers
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ matrix.artifact }}
-          path: ${{ matrix.artifact }}
+          name: Birka-${{ steps.meta.outputs.version }}-${{ matrix.suffix }}
+          path: Birka-${{ steps.meta.outputs.version }}-${{ matrix.suffix }}

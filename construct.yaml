@@ -1,13 +1,13 @@
-name: birka
-version: 0.1.2
+name: Birka
+version: 0.1.3
 channels:
   - https://conda.anaconda.org/conda-forge/
   - https://repo.anaconda.com/pkgs/main/
   - https://repo.anaconda.com/pkgs/msys2/  # [win]
 specs:
   - bioformats_jar
-  - birka==0.1.2
-  - birka-menu==0.1.2
+  - birka==0.1.3
+  - birka-menu==0.1.3
   - conda  # required for post-install
   - menuinst>=2
   - pip  # required for post-install
@@ -21,6 +21,7 @@ write_condarc: true
 post_install: post-install.sh  # [linux]
 post_install: post-install.bat  # [win]
 post_install: post-install.sh  # [osx]
+post_install_desc: Install CZI and LIF file format support (requires internet connection).
 welcome_image: ""
 header_image: ""
 icon_image: ""
